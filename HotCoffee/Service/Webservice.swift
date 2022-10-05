@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 enum NetworkError: Error {
     case decodingError
     case domainError
@@ -14,28 +15,32 @@ enum NetworkError: Error {
 }
 
 struct Resource<T: Codable> {
-    let url : URL
+    let url: URL
 }
 
 class Webservice {
     
-    func load<T>(resource: Resource<T>, completion: @escaping (Result<T , NetworkError> ) -> Void){
+    func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) {
         
-        URLSession.shared.dataTask(with: resource.url) { data , response , error in
+        URLSession.shared.dataTask(with: resource.url) { data, response, error in
             
-            guard let data = data, error == nil else{
+            guard let data = data, error == nil else {
                 completion(.failure(.domainError))
                 return
             }
             
             let result = try? JSONDecoder().decode(T.self, from: data)
-            if let result = result{
+            
+            if let result = result {
                 DispatchQueue.main.async {
                     completion(.success(result))
                 }
-            }else {
+            } else {
                 completion(.failure(.decodingError))
             }
+            
         }.resume()
+        
     }
+    
 }

@@ -5,10 +5,12 @@
 //  Created by YUSUF ÖZATA on 4.10.2022.
 //
 
+
+
 import Foundation
 
 enum CoffeeType: String, Codable {
-    case cappucino
+    case cappuccino
     case latte
     case espressino
     case cortado
@@ -21,8 +23,10 @@ enum CoffeeSize: String, Codable {
 }
 
 struct Order: Codable {
+    
     let name: String
     let email: String
     let type: CoffeeType
     let size: CoffeeSize
+    
 }
