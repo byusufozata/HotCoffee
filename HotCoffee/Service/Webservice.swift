@@ -37,6 +37,7 @@ class Webservice {
                 }
             } else {
                 completion(.failure(.decodingError))
+                
             }
             
         }.resume()

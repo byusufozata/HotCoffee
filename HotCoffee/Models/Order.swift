@@ -26,7 +26,7 @@ struct Order: Codable {
     
     let name: String
     let email: String
-    let type: CoffeeType
-    let size: CoffeeSize
+    let type: String
+    let size: String
     
 }
