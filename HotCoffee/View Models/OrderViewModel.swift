@@ -41,10 +41,10 @@ extension OrderViewModel {
     }
     
     var type: String {
-        return self.order.type
+        return self.order.type.rawValue
     }
     
     var size: String {
-        return self.order.size
+        return self.order.size.rawValue
     }
 }

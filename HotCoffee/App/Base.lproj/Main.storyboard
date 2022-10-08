@@ -68,10 +68,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-Zp-1MK">
-                                <rect key="frame" x="0.0" y="28" width="414" height="359"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6Uz-cX-hgc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeTypeTableViewCell" id="6Uz-cX-hgc">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Uz-cX-hgc" id="8wZ-FC-uTZ">
@@ -80,9 +80,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RXV-eb-hgf" id="8U9-bG-WF1"/>
+                                    <outlet property="delegate" destination="RXV-eb-hgf" id="HvB-EX-1Ih"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mwg-uB-5VX">
-                                <rect key="frame" x="107" y="519" width="200" height="34"/>
+                                <rect key="frame" x="107" y="643" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="rYq-Gk-zNg"/>
                                     <constraint firstAttribute="height" constant="34" id="y1y-Cy-Ehh"/>
@@ -91,7 +95,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ip6-oX-YFg">
-                                <rect key="frame" x="107" y="579" width="200" height="34"/>
+                                <rect key="frame" x="107" y="703" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="gun-Ul-hpc"/>
                                     <constraint firstAttribute="height" constant="34" id="l9s-Z3-uv0"/>
@@ -99,39 +103,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ITv-Ji-qvP">
-                                <rect key="frame" x="104" y="426" width="206" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0IT-5m-IcB"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wvz-HF-xzq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ugd-Zp-1MK" firstAttribute="height" secondItem="fiq-JA-ye3" secondAttribute="height" multiplier="0.5" id="49D-gK-4CN"/>
                             <constraint firstItem="ugd-Zp-1MK" firstAttribute="top" secondItem="wvz-HF-xzq" secondAttribute="top" multiplier="0.5" id="751-1o-Ptz"/>
-                            <constraint firstItem="ITv-Ji-qvP" firstAttribute="centerX" secondItem="fiq-JA-ye3" secondAttribute="centerX" id="7mM-1U-iDn"/>
-                            <constraint firstItem="ITv-Ji-qvP" firstAttribute="centerX" secondItem="fiq-JA-ye3" secondAttribute="centerX" id="8cy-qH-9rY"/>
                             <constraint firstItem="Ip6-oX-YFg" firstAttribute="top" secondItem="Mwg-uB-5VX" secondAttribute="bottom" constant="26" id="9Yf-Ua-nA6"/>
                             <constraint firstItem="Mwg-uB-5VX" firstAttribute="centerX" secondItem="fiq-JA-ye3" secondAttribute="centerX" id="Un0-oC-xbr"/>
                             <constraint firstItem="ugd-Zp-1MK" firstAttribute="leading" secondItem="wvz-HF-xzq" secondAttribute="leading" multiplier="0.5" id="WvY-Id-xMj"/>
                             <constraint firstItem="wvz-HF-xzq" firstAttribute="bottom" secondItem="Ip6-oX-YFg" secondAttribute="bottom" constant="105" id="b95-Rv-Tqa"/>
                             <constraint firstItem="Ip6-oX-YFg" firstAttribute="centerX" secondItem="fiq-JA-ye3" secondAttribute="centerX" id="c8Y-wd-2II"/>
-                            <constraint firstItem="Mwg-uB-5VX" firstAttribute="top" secondItem="ITv-Ji-qvP" secondAttribute="bottom" constant="62" id="jc2-Qt-2F5"/>
                             <constraint firstItem="ugd-Zp-1MK" firstAttribute="width" secondItem="fiq-JA-ye3" secondAttribute="width" id="pLa-6D-vjd"/>
-                            <constraint firstItem="ITv-Ji-qvP" firstAttribute="top" secondItem="ugd-Zp-1MK" secondAttribute="bottom" constant="39" id="wmT-un-psQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="JeM-NG-YoQ">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="xBe-kx-DXh"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="7o7-nO-gnV"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="xBe-kx-DXh">
+                            <connections>
+                                <action selector="close" destination="RXV-eb-hgf" id="qDQ-9h-xCT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7o7-nO-gnV">
+                            <connections>
+                                <action selector="save" destination="RXV-eb-hgf" id="CF2-3U-dZD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextFiel" destination="Ip6-oX-YFg" id="nlx-xJ-cMJ"/>
+                        <outlet property="nameTextFiel" destination="Mwg-uB-5VX" id="2vk-iD-Sb3"/>
+                        <outlet property="tableView" destination="ugd-Zp-1MK" id="ZV9-Oc-6De"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmx-z0-cPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
